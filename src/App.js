@@ -140,8 +140,9 @@ function App() {
 
   const storingSearch = useRef(null);
 
-  // let localStorageArray =
-  //   !!JSON.parse(window.localStorage.getItem("favorites")).length || 1;
+  let localStorageArray = !!JSON.parse(
+    window.localStorage.getItem("favorites")
+  );
 
   return (
     <div className="body">
@@ -196,7 +197,7 @@ function App() {
       )}
       {!showFavorites && (
         <div className="photos">
-          {/* {!localStorageArray && <h1>Empty list</h1>} */}
+          {!localStorageArray && <h1>Empty list</h1>}
 
           {(JSON.parse(window.localStorage.getItem("favorites")) || []).map(
             function (element, index) {
